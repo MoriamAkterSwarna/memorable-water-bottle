@@ -20,4 +20,4 @@ const getStoredCart = () => {
         saveCartToLS(cart);
     }
 
-    export {addToLS}
+    export {addToLS, getStoredCart}
