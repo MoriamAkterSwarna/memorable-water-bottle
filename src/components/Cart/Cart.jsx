@@ -1,20 +1,20 @@
+import "./Cart.css";
 
-import './Cart.css';
+const Cart = ({ cart, handleRemoveFromCart }) => {
+  return (
+    <div>
+      <h4>Cart {cart.length}</h4>
 
-const Cart = ({cart}) => {
-    return (
-        <div>
-            <h4>Cart {cart.length}</h4>
-
-            <div className="cart-container">
-                {cart.map((bottle) => (
-                    
-                        <img src={bottle.img} alt="" />
-                        
-                ))}
-            </div>
-        </div>
-    );
+      <div className="cart-container">
+        {cart.map((bottle) => (
+          <div>
+            <img src={bottle.img} alt="" />
+            <button onClick={() => handleRemoveFromCart(bottle.id)}>Remove</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Cart;
